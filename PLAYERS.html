@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>players</title>
+    <link rel="icon" href="..\imag\logo\Group 1.png">
+    <link rel="stylesheet" href="style1.css">
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .players-main {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .category h2 {
+            font-size: 22px;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        .player-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .player-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 140px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .player-card:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .player-card img {
+             width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+
+        .player-card:hover img {
+            box-shadow: 0px 8px 15px rgba(255, 237, 2, 0.4);
+            border: 1px solid #ffed02;
+        }
+
+        .player-card p {
+            margin: 10px 0 8px 0;
+            font-size: 14px;
+            text-transform: capitalize;
+        }
+        .player-card .number {
+            background-color: #a50044;
+            color: #ffed02;
+            padding: 3px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="FCB.html"><img src="..\imag\logo\Group 1.png" alt="FCB Logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Untitled-2.html">HOME</a></li>
+                <li><a href="PLAYERS.html" class="active">PLAYERS</a></li>
+                <li><a href="matches1.html">MATCHES</a></li>
+                <li><a href="news.html">NEWS</a></li>
+                <li><a href="shop.html">SHOP</a></li>
+            </ul>
+        </nav>
+        <div class="nav-icons">
+            <a href="login.html"><img src="..\imag\icons\User Male.png" alt="User"></a>
+            <a href="panier.html"><img src="..\imag\icons\Shopping Cart.png" alt="Cart"></a>
+        </div>
+    </header>
+    <main class="players-main">
+        <section class="category">
+            <h2>Gardiens</h2>
+            <div class="player-grid">
+                <div class="player-card">
+                    <img src="C:\Users\HP 830G8\Desktop\MINI PROJET\imag\player\JOAN.jpg" alt="Marc-André ter Stegen">
+                    <p>Marc-André ter Stegen</p>
+                    <span class="number">N 1</span>
+                </div>
+                <div class="player-card">
+                    <img src="C:\Users\HP 830G8\Desktop\MINI PROJET\imag\player\WO.jpg" alt="Iñaki Peña">
+                    <p>Iñaki Peña</p>
+                    <span class="number">N 13</span>
+                </div>
+            </div>
+        </section>
+        <section class="category">
+            <h2>Défenseurs</h2>
+            <div class="player-grid">
+                <div class="player-card">
+                    <img src="..\imag\player\JOAO.jpg" alt="Joao Cancelo">
+                    <p>Joao Cancelo</p>
+                    <span class="number">N 2</span>
+                </div>
+                <div class="player-card">
+                    <img src="..\imag\player\BALD.jpg" alt="Alejandro Balde">
+                    <p>Alejandro Balde</p>
+                    <span class="number">N 3</span>
+                </div>
+                <div class="player-card">
+                    <img src="..\imag\player\ajougo.jpg" alt="Ronald Araujo">
+                    <p>Ronald Araujo</p>
+                    <span class="number">N 4</span>
+                </div>
+                <div class="player-card">
+                    <img src="..\imag\player\cubarsi.jpg" alt="pau ">
+                    <p>pau cubarsí</p>
+                    <span class="number">N 5</span>
+                </div>
+                <div class="player-card">
+                    <img src="..\imag\player\CHRIS.jpg" alt="Andreas Christensen">
+                    <p>Andreas Christensen</p>
+                    <span class="number">N 15</span>
+                </div>
+                <div class="player-card">
+                    <img src="..\imag\player\GERARD MARTIN.jpg" alt="Gerard Martin">
+                    <p>Gerard Martin</p>
+                    <span class="number">N 35</span>
+                </div>
+                <div class="player-card">
+                    <img src="..\imag\player\JULES.jpg" alt="Jules Koundé">
+                    <p>Jules Koundé</p>
+                    <span class="number">N 23</span>
+                </div>
+                <div class="player-card">
+                    <img src="..\imag\player\GARCIA.jpg" alt="Eric Garcia">
+                    <p>Eric Garcia</p>
+                    <span class="number">N 24</span>
+                </div>
+            </div>
+        </section>
+        <section class="category">
+            <h2>Milieux</h2>
+            <div class="player-grid">
+                <div class="player-card">
+                    <img src="..\imag\player\GAVI.jpg" alt="Gavi">
+                    <p>Gavi</p>
+                    <span class="number">N 6</span>
+                </div>
+                <div class="player-card">
+                    <img src="..\imag\player\PEDRI.jpg" alt="Pedri">
+                    <p>Pedri</p>
+                    <span class="number">N 8</span>
+                </div>
+                <div class="player-card">
+                    <img src="..\imag\player\FERMIN.jpg" alt="Fermín López">
+                    <p>Fermín López</p>
+                    <span class="number">N 16</span>
+                </div>
+                <div class="player-card">
+                    <img src="..\imag\player\MARC1.jpg" alt="Marc Casadó">
+                    <p>Marc Casadó</p>
+                    <span class="number">N 17</span>
+                </div>
+                <div class="player-card">
+                    <img src="..\imag\player\OLMO.jpg" alt="Dani Olmo">
+                    <p>Dani Olmo</p>
+                    <span class="number">N 20</span>
+                </div>
+                <div class="player-card">
+                    <img src="..\imag\player\dejong.jpg" alt="Frenkie de Jong">
+                    <p>Frenkie de Jong</p>
+                    <span class="number">N 21</span>
+                </div>
+                <div class="player-card">
+                    <img src="..\imag\player\bernal.webp" alt="Marc Bernal">
+                    <p>Marc Bernal</p>
+                    <span class="number">N 28</span>
+                </div>
+            </div>
+        </section>
+        <section class="category">
+            <h2>Forwards</h2>
+            <div class="player-grid">
+                <div class="player-card">
+                    <img src="..\imag\player\ferran.webp" alt="Ferran Torres">
+                    <p>Ferran Torres</p>
+                    <span class="number">N 7</span>
+                </div>
+                <div class="player-card">
+                    <img src="..\imag\player\ROB.jpg" alt="Robert Lewandowski">
+                    <p>Robert Lewandowski</p>
+                    <span class="number">N 9</span>
+                </div>
+                <div class="player-card">
+                    <img src="..\imag\player\LAMIN.png" alt="Lamine Yamal">
+                    <p>Lamine Yamal</p>
+                    <span class="number">N 10</span>
+                </div>
+                <div class="player-card">
+                    <img src="..\imag\player\RAF.jpg" alt="Raphinha">
+                    <p>Raphinha</p>
+                    <span class="number">N 11</span>
+                </div>
+                <div class="player-card">
+                    <img src="..\imag\player\14-Rashford.webp" alt="marcus rashford">
+                    <p>marcus rashford</p>
+                    <span class="number">N 14</span>
+                </div>
+                <div class="player-card">
+                    <img src="..\imag\player\28-Bardghji.webp" alt="roony bardghji">
+                    <p>roony bardghji</p>
+                    <span class="number">N 19</span>
+                </div>
+            </div>
+        </section>
+        <section class="category">
+            <h2>Coaching Staff</h2>
+            <div class="player-grid">
+                <div class="player-card">
+                    <img src="..\imag\player\flik.webp" alt="Hansi Flick">
+                    <p>Hansi Flick</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <div class="footer">
+        <footer class="footer-container">
+            <div class="social-icons">
+                <a href="https://discord.com/" target="_blank"><img
+                        src="..\imag\icons\ic_baseline-discord.png" alt="Discord"></a>
+                <a href="https://www.tiktok.com/" target="_blank"><img
+                        src="..\imag\icons\Vector.png" alt="TikTok"></a>
+                <a href="https://open.spotify.com/" target="_blank"><img src="..\imag\icons\mdi_spotify.png"
+                        alt="Spotify"></a>
+                <a href="https://youtube.com/" target="_blank"><img
+                        src="..\imag\icons\logos_youtube-icon.png" alt="YouTube"></a>
+                <a href="https://m.facebook.com/" target="_blank"><img
+                        src="..\imag\icons\Frame 33.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/?hl=en" target="_blank"><img
+                        src="..\imag\icons\Frame 33 (1).png" alt="Instagram"></a>
+                <a href="https://x.com/" target="_blank"><img src="..\imag\icons\image 2.png"
+                        alt="Twitter"></a>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><strong>Goalkeepers</strong></li>
+                    <li>Marc-André ter Stegen</li>
+                    <li>Iñaki Peña</li>
+                </ul>
+                <ul>
+                    <li><strong>Defenders</strong></li>
+                    <li>João Cancelo</li>
+                    <li>Alejandro Balde</li>
+                    <li>Ronald Araujo</li>
+                    <li>Iñigo Martinez</li>
+                </ul>
+                <ul>
+                    <li><strong>Milieux</strong></li>
+                    <li>Gavi</li>
+                    <li>Pedri</li>
+                    <li>Fermín López</li>
+                    <li>Dani Olmo</li>
+                </ul>
+                <ul>
+                    <li><strong>Attaquants</strong></li>
+                    <li>Ferran Torres</li>
+                    <li>Robert Lewandowski</li>
+                    <li>Lamine Yamal</li>
+                    <li>Raphinha</li>
+                </ul>
+            </div><br><br><br>
+
+            <div class="footer-bottom">
+                <img src="..\imag\logo\Group 1.png" alt="FCB Logo">
+                <p>© Copyright FCB Site Officiel du SM</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

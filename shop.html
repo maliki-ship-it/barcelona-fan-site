@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shop.com</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="icon" href="..\imag\logo\Group 1.png">
+    <style>
+          :root {
+            --fcb-red: #a50044;
+            --fcb-blue: #004d98;
+            --fcb-gold: #ffcc00;
+            --fcb-dark: #0a0a12;
+            --fcb-light: #f5f5f5;
+        }
+    .hero-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 1300px;
+            margin: 20px auto;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+        }
+        .hero-wrapper img.team-photo {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.65);
+        }
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -60%);
+            text-align: center;
+            color: #fff;
+            animation: heroFadeIn 1.2s ease-out forwards;
+            opacity: 0;
+        }
+        @keyframes heroFadeIn {
+            0% { opacity: 0; transform: translate(-50%, -80%); }
+            100% { opacity: 1; transform: translate(-50%, -50%); }
+        }
+        .hero-text h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            letter-spacing: 3px;
+            text-shadow: 3px 3px 15px rgba(0,0,0,0.8);
+        }
+        .hero-text h1 span { color: var(--fcb-gold); }
+        .hero-stripe {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--fcb-blue) 50%, var(--fcb-red) 50%);
+        }
+        .products-grid {
+    display: grid;
+    grid-template-columns: repeat(5, auto); 
+    gap: 20px; 
+    padding: 20px;
+    background-color: #f4f4f4; 
+}
+.product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.product-img{
+    width: 178px;
+    height: 178px;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+
+.product-price {
+    margin-top: 15px;
+    background-color: #8a3c54;
+    color: #ffcc00; 
+    padding: 5px 25px;
+    border-radius: 50px; 
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+}
+
+.product-card {
+    width: 250px;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    margin: 20px;
+}
+
+
+.product-img {
+    overflow: hidden; 
+}
+
+.product-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease; 
+}
+
+
+.product-card:hover .product-img img {
+    transform: scale(1.1); 
+}
+
+ @keyframes cardSlideUp {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(165,0,68,0.2);
+        }
+        .product-img {
+            overflow: hidden;
+            height: 180px;
+            background: #f0f0f0;
+        }
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+        .product-card:hover .product-img img {
+            transform: scale(1.12);
+        }
+        .product-info {
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+        }
+        .product-price {
+            background: linear-gradient(135deg, var(--fcb-red), #c0006a);
+            color: var(--fcb-gold);
+            padding: 5px 22px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
+            box-shadow: 0 3px 10px rgba(165,0,68,0.3);
+            transition: transform 0.2s;
+        }
+        .product-card:hover .product-price {
+            transform: scale(1.08);
+        }
+        .product-card .btn-cart {
+            display: block;
+            width: 100%;
+            background: var(--fcb-blue);
+            color: #fff;
+            text-align: center;
+            padding: 8px 0;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            transform: translateY(40px);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .product-card:hover .btn-cart {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .btn-cart:hover { background: var(--fcb-red); }
+        .section-title {
+            text-align: center;
+            padding: 50px 0 20px;
+            position: relative;
+        }
+        .section-title h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            letter-spacing: 4px;
+            color: var(--fcb-dark);
+            display: inline-block;
+        }
+        .section-title h2::after {
+            content: '';
+            display: block;
+            height: 4px;
+            width: 60%;
+            margin: 8px auto 0;
+            background: linear-gradient(90deg, var(--fcb-blue), var(--fcb-red));
+            border-radius: 2px;
+        }
+          .icons-bar {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            padding: 40px 20px;
+            background: #fff;
+            border-bottom: 3px solid var(--fcb-gold);
+        }
+        .icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            animation: iconPop 0.6s ease-out both;
+        }
+        .icon-item:nth-child(1) { animation-delay: 0.1s; }
+        .icon-item:nth-child(2) { animation-delay: 0.2s; }
+        .icon-item:nth-child(3) { animation-delay: 0.3s; }
+        .icon-item:nth-child(4) { animation-delay: 0.4s; }
+        @keyframes iconPop {
+            0% { opacity: 0; transform: scale(0.5) translateY(20px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .icon-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.2));
+        }
+        .icon-item:hover img {
+            transform: scale(1.25) rotate(-5deg);
+            filter: drop-shadow(0 4px 12px rgba(165,0,68,0.4));
+        }
+        .icon-item span {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            color: var(--fcb-red);
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <a href="FCB.html"><img src="..\imag\logo\Group 1.png" alt="FCB Logo"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Untitled-2.html">HOME</a></li>
+                <li><a href="PLAYERS.html">PLAYERS</a></li>
+                <li><a href="matches1.html">MATCHES</a></li>
+                <li><a href="news.html">NEWS</a></li>
+                <li><a href="shop.html" class="active">SHOP</a></li>
+            </ul>
+        </nav>
+        <div class="nav-icons">
+            <a href="login.html"><img src="..\imag\icons\User Male.png" alt="User"></a>
+            <a href="panier.html"><img src="..\imag\icons\Shopping Cart.png" alt="Cart"></a>
+        </div>
+    </header>
+    <div>
+<div class="hero-wrapper">
+    <img src="..\imag/aceuil/Screenshot 2026-04-14 162153.png" alt="FCB Team"
+        class="team-photo"
+        onerror="this.style.background='linear-gradient(135deg,#004d98,#a50044)';this.style.height='420px';this.removeAttribute('src')">
+    <div class="hero-text">
+        <h1>WELCOME TO<br><span>THE OFFICIAL</span><br>STORE FCB</h1>
+    </div>
+    <div class="hero-stripe"></div>
+</div>
+    <nav class="icons-bar">
+        <div class="icon-item"><img src="..\imag\icons\Clothes.png">
+        <span>SHIRT</span></div>
+        <div class="icon-item"><img src="..\imag\icons\Cleats.png">
+        <span>SHOE</span></div>
+        <div class="icon-item"><img src="..\imag\icons\FOOT.png">
+        <span>BALL</span></div>
+        <div class="icon-item"><img src="..\imag\icons\Group.png">
+        <span>CAP</span></div>
+    </nav> 
+    <div class="section-title reveal">
+        <h2>SHIRT</h2>
+    </div>
+    <div class="products-section">
+        <div class="products-grid" id="shirts-grid">
+            <div class="product-card featured">
+                <div class="product-img"><img src="..\imag\short\KOBARCER.webp"
+                        alt="Shirt"></div>
+                <div class="product-info"><span class="product-price">110€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\short\S.webp" alt="Shirt">
+                </div>
+                <div class="product-info"><span class="product-price">112€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\short\shirt 1.webp"
+                        alt="Shirt"></div>
+                <div class="product-info"><span class="product-price">90€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\short\shirt 2.webp"
+                        alt="Shirt"></div>
+                <div class="product-info"><span class="product-price">40€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\short\shirt.webp" alt="Shirt">
+                </div>
+                <div class="product-info"><span class="product-price">54€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\short\SHIRT4.webp"
+                        alt="Shirt"></div>
+                <div class="product-info"><span class="product-price">94€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\short\shirt5.webp"
+                        alt="Shirt"></div>
+                <div class="product-info"><span class="product-price">40€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\short\shirt8.webp"
+                        alt="Shirt"></div>
+                <div class="product-info"><span class="product-price">40€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\short\shirt7.webp"
+                        alt="Shirt"></div>
+                <div class="product-info"><span class="product-price">40€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="section-title reveal">
+        <h2>SHOE</h2>
+    </div>
+    <div class="products-section">
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\shoes\D1.webp" alt="Shoe">
+                </div>
+                <div class="product-info"><span class="product-price">114€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\shoes\D3.webp" alt="Shoe">
+                </div>
+                <div class="product-info"><span class="product-price">40€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\shoes\D4.webp" alt="Shoe">
+                </div>
+                <div class="product-info"><span class="product-price">114€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\shoes\D5.webp" alt="Shoe">
+                </div>
+                <div class="product-info"><span class="product-price">114€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\shoes\D6.webp" alt="Shoe">
+                </div>
+                <div class="product-info"><span class="product-price">114€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\shoes\D7.webp" alt="Shoe">
+                </div>
+                <div class="product-info"><span class="product-price">114€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\shoes\D8.webp" alt="Shoe">
+                </div>
+                <div class="product-info"><span class="product-price">114€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\shoes\D9.webp" alt="Shoe">
+                </div>
+                <div class="product-info"><span class="product-price">114€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\shoes\D11.webp" alt="Shoe">
+                </div>
+                <div class="product-info"><span class="product-price">114€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <div class="section-title reveal">
+        <h2>BALL</h2>
+    </div>
+    <div class="products-section">
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\ball\B.jpg" alt="Ball"></div>
+                <div class="product-info"><span class="product-price">114€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\ball\B1.webp" alt="Ball">
+                </div>
+                <div class="product-info"><span class="product-price">114€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\ball\B2.webp" alt="Ball">
+                </div>
+                <div class="product-info"><span class="product-price">114€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\ball\B3.webp" alt="Ball">
+                </div>
+                <div class="product-info"><span class="product-price">40€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\ball\B4.jpg" alt="Ball"></div>
+                <div class="product-info"><span class="product-price">120€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\ball\B5.webp" alt="Ball">
+                </div>
+                <div class="product-info"><span class="product-price">110€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\ball\B6.webp" alt="Ball">
+                </div>
+                <div class="product-info"><span class="product-price">250€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\ball\B7.webp" alt="Ball">
+                </div>
+                <div class="product-info"><span class="product-price">300€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\ball\B8.webp" alt="Ball">
+                </div>
+                <div class="product-info"><span class="product-price">200€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\ball\B9.webp" alt="Ball">
+                </div>
+                <div class="product-info"><span class="product-price">90€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\ball\B10.webp" alt="Ball">
+                </div>
+                <div class="product-info"><span class="product-price">120€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <div class="section-title reveal">
+        <h2>CAP</h2>
+    </div>
+    <div class="products-section">
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\cap\c1.webp" alt="Cap"></div>
+                <div class="product-info"><span class="product-price">25€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\cap\c2.webp" alt="Cap"></div>
+                <div class="product-info"><span class="product-price">50€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\cap\c3.webp" alt="Cap"></div>
+                <div class="product-info"><span class="product-price">55€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\cap\c4.webp" alt="Cap"></div>
+                <div class="product-info"><span class="product-price">40€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\cap\c5.webp" alt="Cap"></div>
+                <div class="product-info"><span class="product-price">45€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\cap\c6.webp" alt="Cap"></div>
+                <div class="product-info"><span class="product-price">50€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\cap\c7.webp" alt="Cap"></div>
+                <div class="product-info"><span class="product-price">45€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\cap\c8.webp" alt="Cap"></div>
+                <div class="product-info"><span class="product-price">40€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\cap\c9.webp" alt="Cap"></div>
+                <div class="product-info"><span class="product-price">38€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\cap\c10.webp" alt="Cap"></div>
+                <div class="product-info"><span class="product-price">34€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><img src="..\imag\cap\c11.webp" alt="Cap"></div>
+                <div class="product-info"><span class="product-price">25€</span></div>
+                <button class="btn-cart">🛒 Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <footer class="footer-container">
+            <div class="social-icons">
+                <a href="#"><img src="..\imag\icons\ic_baseline-discord.png" alt="Discord"></a>
+                <a href="#"><img src="..\imag\icons\Vector.png" alt="TikTok"></a>
+                <a href="#"><img src="..\imag\icons\mdi_spotify.png" alt="Spotify"></a>
+                <a href="#"><img src="..\imag\icons\logos_youtube-icon.png" alt="YouTube"></a>
+                <a href="#"><img src="..\imag\icons\Frame 33.png" alt="Facebook"></a>
+                <a href="#"><img src="..\imag\icons\Frame 33 (1).png" alt="Instagram"></a>
+                <a href="#"><img src="..\imag\icons\image 2.png" alt="Twitter"></a>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><strong>Goalkeepers</strong></li>
+                    <li>Wojciech Szczęsny</li>
+                    <li>João Cancelo</li>
+                </ul>
+                <ul>
+                    <li><strong>Defenders</strong></li>
+                    <li>João Cancelo</li>
+                    <li>Alejandro Balde</li>
+                    <li>Ronald Araujo</li>
+                    <li>Pau Cubarsí</li>
+                </ul>
+                <ul>
+                    <li><strong>Milieux</strong></li>
+                    <li>Gavi</li>
+                    <li>Pedri</li>
+                    <li>Fermín López</li>
+                    <li>Dani Olmo</li>
+                </ul>
+                <ul>
+                    <li><strong>Attaquants</strong></li>
+                    <li>Ferran Torres</li>
+                    <li>Robert Lewandowski</li>
+                    <li>Lamine Yamal</li>
+                    <li>Raphinha</li>
+                </ul>
+            </div><BR><BR><BR>
+
+            <div class="footer-bottom">
+                <img src="..\imag\logo\Group 1.png">
+                <p>© Copyright FCB Site Officiel du SM</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        const cartButtons = document.querySelectorAll('.btn-cart');
+        cartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const card = button.closest('.product-card');
+                const productImg = card.querySelector('.product-img img').src;
+                const productPrice = card.querySelector('.product-price').innerText;
+                const productName = card.querySelector('.product-img img').alt;
+                const product = {
+                    name: productName,
+                    price: productPrice,
+                    image: productImg,
+                    id: Date.now() 
+                };
+                let cart = JSON.parse(localStorage.getItem('fcb_cart')) || [];
+                cart.push(product);
+                localStorage.setItem('fcb_cart', JSON.stringify(cart));
+
+                alert('The product has been successfully added to the cart!');
+            });
+        });
+    </script>
+</body>
+
+</html>

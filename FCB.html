@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histoire</title>
+    <link rel="icon" href="..\imag\logo\Group 1.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #004d98, #a50044);
+            color: white;
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.4), transparent);
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            animation: fadeDown 1s ease;
+        }
+
+        .hero p {
+            font-size: 20px;
+            opacity: 0.8;
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transform: translateY(40px);
+            opacity: 0;
+            transition: 0.6s;
+        }
+
+        .card.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .titles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.4s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .box:hover {
+            transform: translateY(-10px) scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .box img {
+            width: 70px;
+            margin-bottom: 10px;
+        }
+        .counter {
+            font-size: 30px;
+            color: gold;
+            font-weight: bold;
+        }
+        @keyframes fadeDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        p {
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+       
+        #AB {
+    width: 80px;
+    transition: 0.4s;
+}
+
+    #AB:hover img {
+    transform: scale(1.2) rotate(5deg);
+}
+ #AB {
+    animation: float 3s infinite;
+    transition: 0.4s;
+}
+  #AB{
+    animation: float 3s infinite;
+    transition: 0.4s;
+}
+
+ #AB:hover img {
+    transform: scale(1.2);
+}
+.footer{
+     background: linear-gradient(to right, #a50044, #004d98);
+}
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    font-size: 17px;
+    line-height: 1.8;
+   
+}
+
+.footer-links ul {
+    list-style: none;
+    margin: auto;
+}
+.footer-links li {
+   color: white;
+}
+
+.footer-links h4 {
+    margin-bottom: 200px;
+    text-transform: uppercase;
+}
+.footer-bottom {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    width: 100%;
+    justify-content:space-around ;
+}
+
+
+
+.footer-bottom p{
+    margin: 0;
+    font-family: sans-serif;
+   color: white;
+}
+.footer-bottom img{
+    width: auto;
+    height: 60px;
+}
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    padding: 20px 0;
+}
+.social-icons img {
+    width: 60px;
+    height: auto;
+     transition: transform 0.3s ease;
+}
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+.az img{
+    width: 50px;
+    height: 37px;
+}
+.az h1{
+    color: #a50044;
+}
+    </style>
+</head>
+
+<body>
+    <div class="az"><a href="Untitled-2.html"><h1>RETURN HOME ⇤</h1></a></div>
+    <section class="hero">
+        <img id="AB" src="..\imag\logo\Group 1.png">
+        <h1>FCB</h1>
+        <p>"VISCA BARçA"</p>
+    </section>
+
+    <div class="container">
+        <div class="card">
+            <h2>Histoire</h2>
+            <p>
+                Le FC Barcelone a été fondé en 1899 par Joan Gamper. Depuis plus d’un siècle,
+                le club représente l’identité catalane et fait partie des plus grands clubs
+                de football au monde.
+            </p>
+            <p>
+                Le club joue au Camp Nou, le plus grand stade d’Europe, et est célèbre
+                pour son style de jeu unique appelé "tiki-taka".
+            </p>
+        </div>
+        <div class="card">
+            <h2>Informations</h2>
+            <p><strong>Fondation :</strong> 1899</p>
+            <p><strong>Stade :</strong> Camp Nou</p>
+            <p><strong>Pays :</strong> Espagne</p>
+        </div>
+        <div class="card">
+            <h2>Palmarès</h2>
+
+            <div class="titles">
+
+                <div class="box">
+                    <img src="..\imag\histoire\LIGA.png">
+                    <h3>Liga</h3>
+                    <p class="counter" data-target="27">0</p>
+                </div>
+
+                <div class="box">
+                    <img src="..\imag\histoire\CHAM.png">
+                    <h3>Champions League</h3>
+                    <p class="counter" data-target="5">0</p>
+                </div>
+
+                <div class="box">
+                    <img src="..\imag\histoire\TR1.jpg">
+                    <h3>Coupe du Roi</h3>
+                    <p class="counter" data-target="31">0</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div><br><br>
+    <div class="footer">
+        <footer class="footer-container">
+            <div class="social-icons">
+                <a href="#"><img src="..\imag\icons\ic_baseline-discord.png" alt="Discord"></a>
+                <a href="#"><img src="..\imag\icons\Vector.png" alt="TikTok"></a>
+                <a href="#"><img src="..\imag\icons\mdi_spotify.png" alt="Spotify"></a>
+                <a href="#"><img src="..\imag\icons\logos_youtube-icon.png" alt="YouTube"></a>
+                <a href="#"><img src="..\imag\icons\Frame 33.png" alt="Facebook"></a>
+                <a href="#"><img src="..\imag\icons\Frame 33 (1).png" alt="Instagram"></a>
+                <a href="#"><img src="..\imag\icons\image 2.png" alt="Twitter"></a>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><strong>Goalkeepers</strong></li>
+                    <li>Wojciech Szczęsny</li>
+                    <li>João Cancelo</li>
+                </ul>
+                <ul>
+                    <li><strong>Defenders</strong></li>
+                    <li>João Cancelo</li>
+                    <li>Alejandro Balde</li>
+                    <li>Ronald Araujo</li>
+                    <li>Pau Cubarsí</li>
+                </ul>
+                <ul>
+                    <li><strong>Milieux</strong></li>
+                    <li>Gavi</li>
+                    <li>Pedri</li>
+                    <li>Fermín López</li>
+                    <li>Dani Olmo</li>
+                </ul>
+                <ul>
+                    <li><strong>Attaquants</strong></li>
+                    <li>Ferran Torres</li>
+                    <li>Robert Lewandowski</li>
+                    <li>Lamine Yamal</li>
+                    <li>Raphinha</li>
+                </ul>
+            </div><BR><BR><BR>
+    
+            <div class="footer-bottom">
+                <img src="..\imag\logo\Group 1.png">
+                <p>© Copyright FCB Site Officiel du SM</p>
+            </div>
+        </footer>
+    <script>
+        const counters = document.querySelectorAll('.counter');
+
+        counters.forEach(counter => {
+            let count = 0;
+            const target = +counter.getAttribute('data-target');
+
+            const update = () => {
+                let speed = target / 40;
+                if (count < target) {
+                    count += speed;
+                    counter.innerText = Math.ceil(count);
+                    setTimeout(update, 30);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            update();
+        });
+
+        const cards = document.querySelectorAll('.card');
+
+        window.addEventListener('scroll', () => {
+            cards.forEach(card => {
+                const top = card.getBoundingClientRect().top;
+                if (top < window.innerHeight - 100) {
+                    card.classList.add('show');
+                }
+            });
+        });
+        const boxes = document.querySelectorAll('#AB');
+
+            window.addEventListener('scroll', () => {
+                boxes.forEach(box => {
+                    const top = box.getBoundingClientRect().top;
+                    if (top < window.innerHeight - 100) {
+                        box.classList.add('show');
+                    }
+                });
+            });
+    </script>
+
+</body>
+
+</html>

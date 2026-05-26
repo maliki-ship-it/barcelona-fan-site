@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Panier - FCB Store</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="icon" href="..\imag\logo\Group 1.png">
+    <style>
+        :root {
+            --fcb-red: #a50044;
+            --fcb-blue: #004d98;
+            --fcb-gold: #ffcc00;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+
+        .cart-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: var(--fcb-blue);
+            text-align: center;
+            border-bottom: 3px solid var(--fcb-red);
+            padding-bottom: 10px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .item-info {
+            flex-grow: 1;
+            margin-left: 20px;
+        }
+
+        .item-price {
+            color: var(--fcb-red);
+            font-weight: bold;
+        }
+
+        .btn-remove {
+            background: var(--fcb-red);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cart-total {
+            text-align: right;
+            margin-top: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--fcb-blue);
+        }
+
+        .btn-checkout {
+            display: block;
+            width: 100%;
+            background: var(--fcb-blue);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .empty-msg {
+            text-align: center;
+            padding: 40px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cart-container">
+        <h1>MESS THAT A BASKET 🔵🔴</h1>
+        <div id="cart-items-list">
+        </div>
+        <div class="cart-total" id="total-price">Total: 0€</div>
+        <a href="shop.html" class="btn-checkout"
+            style="background: var(--fcb-gold); color: var(--fcb-blue); margin-bottom: 10px;">Continue Shopping</a>
+        <a href="#" class="btn-checkout">Payer Maintenant</a>
+    </div>
+
+    <script>
+        function displayCart() {
+            const cartList = document.getElementById('cart-items-list');
+            const totalDisplay = document.getElementById('total-price');
+            let cart = JSON.parse(localStorage.getItem('fcb_cart')) || [];
+
+            cartList.innerHTML = '';
+            let total = 0;
+
+            if (cart.length === 0) {
+                cartList.innerHTML = '<p class="empty-msg">Votre panier est vide.</p>';
+                totalDisplay.innerText = 'Total: 0€';
+                return;
+            }
+
+            cart.forEach((item, index) => {
+                const priceValue = parseFloat(item.price.replace('€', ''));
+                total += priceValue;
+
+                cartList.innerHTML += `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.name}">
+                        <div class="item-info">
+                            <h3>${item.name}</h3>
+                            <p class="item-price">${item.price}</p>
+                        </div>
+                        <button class="btn-remove" onclick="removeItem(${index})">Supprimer</button>
+                    </div>
+                `;
+            });
+
+            totalDisplay.innerText = `Total: ${total}€`;
+        }
+
+        function removeItem(index) {
+            let cart = JSON.parse(localStorage.getItem('fcb_cart')) || [];
+            cart.splice(index, 1); 
+            localStorage.setItem('fcb_cart', JSON.stringify(cart));
+            displayCart(); 
+        }
+        displayCart();
+    </script>
+</body>
+
+</html>

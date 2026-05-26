@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion FCB</title>
+    <link rel="icon" href="\imag\logo\Group 1.png">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f4f8;
+        }
+
+        .login-container {
+            background-color: #ffffff;
+            padding: 40px;
+            width: 100%;
+            max-width: 320px;
+            text-align: center;
+             border: 2px solid #0099ff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: slideUpFade 1s ease-out;
+        }
+
+        @keyframes slideUpFade {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .logo-container {
+            margin-bottom: 20px;
+            font-family: 'Oswald', sans-serif;
+            animation: pulse 2.5s infinite;
+        }
+
+        .crown {
+            font-size: 50px;
+            line-height: 1;
+            color: #d4af37;
+        }
+
+        .fcb-text {
+            background: linear-gradient(to right, #cc2027 33%, #2b2bb3 33%, #2b2bb3 66%, #cc2027 66%);
+            color: white;
+            padding: 5px 20px;
+            font-size: 24px;
+            letter-spacing: 5px;
+            display: inline-block;
+            margin-top: -10px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        h2 {
+            font-family: 'Oswald', sans-serif;
+            margin: 10px 0 0;
+            font-size: 20px;
+            color: #333;
+        }
+
+        h3 {
+            font-family: 'Oswald', sans-serif;
+            margin: 5px 0 15px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        p {
+            font-size: 13px;
+            color: #222;
+            margin-bottom: 30px;
+            font-family: 'Oswald', sans-serif;
+            line-height: 1.4;
+        }
+
+        input {
+            width: 100%;
+            padding: 18px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 50px;
+            background-color: #cc2027;
+            color: #fff;
+            font-size: 14px;
+            box-sizing: border-box;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input::placeholder {
+            color: #ffcc00;
+            font-family: 'Oswald', sans-serif;
+        }
+        input:focus {
+            transform: scale(1.03);
+            box-shadow: 0 0 12px rgba(204, 32, 39, 0.6);
+        }
+
+        button {
+            width: 100%;
+            padding: 18px;
+            margin-bottom: 15px;
+            border: none;
+            background-color: #2b2bb3;
+            color: #ffcc00;
+            font-family: 'Oswald', sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-sizing: border-box;
+        }
+        button:hover {
+            background-color: #1e1e8c;
+            transform: translateY(-4px);
+            box-shadow: 0 6px 15px rgba(43, 43, 179, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+            box-shadow: none;
+        }
+
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, #cc2027 50%, #2b2bb3 50%);
+            margin: 25px 0;
+            width: 100%;
+        }
+        .fliche a{
+           
+          color: blue;
+          text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+   
+    <div class="login-container">
+        <div class="fliche"><a href="Untitled-2.html">RETURN HOME ⇤</a></div>
+        <div class="logo-container">
+            <img src="../imag/logo/Group 1.png ">
+        </div>
+
+        <h2>FCB OFFICE STORE</h2>
+        <h3>VISCA BARÇA"</h3>
+        <p>Enter your email address to log in with your FCB Account or to create a new FCB account</p>
+
+        <form>
+            <input type="email" placeholder="email address.......">
+            <input type="password" placeholder="PASSWORD......">
+
+            <button type="button">ACCEPT AND CONTINUE</button>
+            <button type="button">CREATE AN ACCOUNT</button>
+        </form>
+
+        <div class="divider"></div>
+
+        <button type="button">GOOGLE</button>
+        <button type="button">APPLE</button>
+        <BR><BR>
+    </div>
+        
+
+</body>
+
+</html>
